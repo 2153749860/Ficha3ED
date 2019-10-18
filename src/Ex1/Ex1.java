@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ficha3;
+package Ex1;
 
 /**
  *
  * @author tiago
  */
-public class Ficha3 {
+public class Ex1 {
 
     /**
      * @param args the command line arguments
