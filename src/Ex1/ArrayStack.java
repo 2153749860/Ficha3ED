@@ -5,6 +5,8 @@
  */
 package Ex1;
 
+import java.util.Arrays;
+
 /**
  *
  * @author tiago
@@ -14,7 +16,7 @@ public class ArrayStack<T> implements StackADT<T>{
     /**
      * constant to represent the default capacity of the array
      */
-    private final int DEFAULT_CAPACITY = 100;
+    private final int DEFAULT_CAPACITY = 2;
     /**
      * int that represents both the number of elements and the next available
      * position in the array
@@ -51,7 +53,7 @@ public class ArrayStack<T> implements StackADT<T>{
      */
     public void push(T element) {
         if (size() == stack.length) {
-            //expandCapacity();
+            expandCapacity();
         }
         stack[top] = element;
         top++;
@@ -91,13 +93,44 @@ public class ArrayStack<T> implements StackADT<T>{
 
     @Override
     public boolean isEmpty() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.top==0;
     }
 
     @Override
     public int size() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.top;
     }
     
+    public void expandCapacity(){
+        T[] newStack = (T[]) (new Object[this.size()*2]);
+        for(int i=0; i<this.size(); i++){
+            newStack[i] = this.stack[i];
+        }
+        
+        this.stack = newStack;
+    }
+
+    @Override
+    public String toString() {
+        /*
+        String s = "";
+        s += "Top: " + this.top + "\n";
+        s += "Tamanho: " + this.size() + "\n";
+        s += "Tamanho Stack: " + this.stack.length + "\n";
+        for(int i=0; i<this.size(); i++){
+            s += this.stack[i] + "\n";
+        }
+        return s;
+        */
+        
+        StringBuilder str = new StringBuilder();
+        str.append("Top: ");str.append(this.top);str.append("\n");
+        str.append("Tamanho: ");str.append(this.size());str.append("\n");
+        str.append("Tamanho Stack: ");str.append(this.stack.length);str.append("\n");
+        for(int i=0; i<this.size(); i++){
+            str.append(this.stack[i]);str.append("\n");
+        }
+        return str.toString();
+    }
     
 }
