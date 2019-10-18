@@ -9,7 +9,7 @@ package Ex1;
  *
  * @author tiago
  */
-public interface StackADT<T> {
+public interface StackADT<T>{
 
     /**
      * Adds one element to the top of this stack.
@@ -23,14 +23,14 @@ public interface StackADT<T> {
      *
      * @return T element removed from the top of the stack
      */
-    public T pop();
+    public T pop() throws EmptyCollectionException;
 
     /**
      * Returns without removing the top element of this stack.
      *
      * @return T element on top of the stack
      */
-    public T peek();
+    public T peek() throws EmptyCollectionException;
 
     /**
      * Returns true if this stack contains no elements.
