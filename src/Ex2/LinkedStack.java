@@ -42,13 +42,19 @@ public class LinkedStack<T> implements StackADT2<T> {
             LinearNode<T> current = this.head;
             this.head = this.head.getNext();
             current.setNext(null);
+            this.count--;
             return current.getElement();
         }
     }
 
     @Override
     public T peek() throws EmptyCollectionException2 {
-        return this.head.getElement();
+        if(isEmpty()){
+            throw new EmptyCollectionException2("Lista vazia!");
+        }
+        else{
+            return this.head.getElement();
+        }
     }
 
     @Override
