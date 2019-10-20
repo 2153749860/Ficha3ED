@@ -21,7 +21,7 @@ public class Ex2 {
     public static void main(String[] args) {
                 LinkedStack teste = new LinkedStack();
 
-        int numeroTeste = 0;
+        int numeroTeste = 2;
 
         switch (numeroTeste) {
             case 0: //teste adicionar

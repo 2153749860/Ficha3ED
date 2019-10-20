@@ -5,13 +5,11 @@
  */
 package Ex2;
 
-import Ex1.*;
-
 /**
  *
  * @author tiago
  */
-public interface StackADT<T>{
+public interface StackADT2<T>{
 
     /**
      * Adds one element to the top of this stack.
@@ -24,6 +22,7 @@ public interface StackADT<T>{
      * Removes and returns the top element from this stack.
      *
      * @return T element removed from the top of the stack
+     * @throws Ex2.EmptyCollectionException2
      */
     public T pop() throws EmptyCollectionException2;
 

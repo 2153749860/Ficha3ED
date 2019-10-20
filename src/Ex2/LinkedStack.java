@@ -10,7 +10,7 @@ package Ex2;
  *
  * @author tiago
  */
-public class LinkedStack<T> implements StackADT<T> {
+public class LinkedStack<T> implements StackADT2<T> {
     
     private int count;
     private LinearNode<T> head;
@@ -36,22 +36,34 @@ public class LinkedStack<T> implements StackADT<T> {
 
     @Override
     public T pop() throws EmptyCollectionException2 {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(this.count==0){
+            throw new EmptyCollectionException2("Não tem!");
+        } else{
+            LinearNode<T> current = this.head;
+            this.head = this.head.getNext();
+            current.setNext(null);
+            return current.getElement();
+        }
     }
 
     @Override
     public T peek() throws EmptyCollectionException2 {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.head.getElement();
     }
 
     @Override
     public boolean isEmpty() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(this.count == 0){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
     @Override
     public int size() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.count;
     }
 
     @Override
